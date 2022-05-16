@@ -1,6 +1,8 @@
 fields:
   pageTitle: Styleguide | Sitecore JSS
 placeholders:
+  jss-header:
+    - componentName: HeaderComponent
   jss-main:
   - componentName: ContentBlock
     fields:
@@ -244,4 +246,5 @@ placeholders:
             fields:
               heading: Translation Patterns
               sample: This text can be translated in en.yml
-
+  jss-footer:
+    - componentName: FooterComponent

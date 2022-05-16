@@ -19,7 +19,21 @@ fields:
 # Define the page layout starting at the root placeholder - in this case, 'main'
 # root placeholder names are defined in the package.json config section (required for Sitecore deployment)
 placeholders:
+  jss-header:
+    - componentName: HeaderComponent
   jss-main:
+    - componentName: TeaserComponent
+      fields:
+        heading: Custom Component PromoComponent Heading
+        content: |
+         <p>Custom Component PromoComponent Content</p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        img:
+          src: /data/media/img/teaser.png
+          alt: Promo Alt
     - componentName: ContentBlock
       fields:
         heading: Welcome to Sitecore JSS
@@ -59,3 +73,5 @@ placeholders:
               <li>Delete <code>/data/dictionary/*.yml</code></li>
             </ol>
           </div>
+  jss-footer:
+    - componentName: FooterComponent

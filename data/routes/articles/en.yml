@@ -1,0 +1,39 @@
+id: articles-page
+fields:
+  pageTitle: Articles Page
+placeholders:
+  jss-header:
+    - componentName: HeaderComponent
+  jss-main:
+    - componentName: Articles-Layout
+      placeholders:
+        jss-articles-layout:
+        - componentName: Articles-Section
+          fields:
+            article_heading: The list of Articles
+          placeholders:
+            jss-articles-section:
+            - componentName: TeaserComponent
+              fields:
+                heading: composite-github-actions
+                content:  <p>Article Content</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                img:
+                  src: /data/media/img/composite-github-actions.png
+                  alt: Alt
+            - componentName: TeaserComponent
+              fields:
+                heading: adding-custom-environment-variables
+                content:  <p>Article Content</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                img:
+                  src: /data/media/img/adding-custom-environment-variables.png
+                  alt: Alt
+  jss-footer:
+    - componentName: FooterComponent
