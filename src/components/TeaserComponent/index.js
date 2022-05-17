@@ -1,7 +1,7 @@
 import React from 'react';
 import { RichText, Text, Image } from '@sitecore-jss/sitecore-jss-react';
 const TeaserComponent = (props) => (
-  <div style={{ border: '2px solid red' }} className="container">
+  <div className="pt-3">
     <div className="row">
       <div className="col-sm-8">
         <h4>

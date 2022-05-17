@@ -24,15 +24,15 @@ placeholders:
   jss-main:
     - componentName: TeaserComponent
       fields:
-        heading: Custom Component PromoComponent Heading
+        heading: Custom Component Heading
         content: |
-         <p>Custom Component PromoComponent Content</p>
+         <p>Custom Component Sub-Heading</p>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         img:
-          src: /data/media/img/teaser.png
+          src: /data/media/img/jss_logo.png
           alt: Promo Alt
     - componentName: ContentBlock
       fields:
