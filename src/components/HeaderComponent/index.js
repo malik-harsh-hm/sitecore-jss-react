@@ -20,12 +20,6 @@ const HeaderComponent = (props) => (
         >
           Documentation
         </a>
-        <NavLink to="/styleguide" className="p-2 text-dark">
-          Styleguide
-        </NavLink>
-        <NavLink to="/graphql" className="p-2 text-dark">
-          GraphQL
-        </NavLink>
         <NavLink to="/articles" className="p-2 text-dark">
           Articles
         </NavLink>

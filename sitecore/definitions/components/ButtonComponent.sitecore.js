@@ -2,18 +2,17 @@
 import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore-jss-dev-tools';
 
 /**
- * Adds the Styleguide-Layout-Tabs-Tab component to the disconnected manifest.
+ * Adds the ButtonComponent component to the disconnected manifest.
  * This function is invoked by convention (*.sitecore.js) when 'jss manifest' is run.
  * @param {Manifest} manifest Manifest instance to add components to
  */
 export default function (manifest) {
   manifest.addComponent({
-    name: 'Styleguide-Layout-Tabs-Tab',
-    templateName: 'Styleguide-Layout-Tabs-Tab',
-    icon: SitecoreIcon.TabPane,
+    name: 'ButtonComponent',
+    icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: 'title', type: CommonFieldTypes.SingleLineText },
-      { name: 'content', type: CommonFieldTypes.RichText },
+      { name: 'label', type: CommonFieldTypes.SingleLineText },
+      { name: 'primary', type: CommonFieldTypes.Checkbox }
     ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
