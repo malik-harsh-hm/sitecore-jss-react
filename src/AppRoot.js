@@ -23,12 +23,14 @@ export const routePatterns = [
 // Router: provides a basic routing setup that will resolve Sitecore item routes and allow for language URL prefixes.
 class AppRoot extends React.Component {
   renderRoute = (props) => {
+    console.log('AppRoot.renderRoute props', props);
     return <RouteHandler route={props} isSSR={!!this.props.ssrState} />;
   };
 
   render() {
-    const { path, Router, graphQLClient } = this.props;
+    console.log('AppRoot.render Props', this.props);
 
+    const { path, Router, graphQLClient } = this.props;
     return (
       <ApolloProvider client={graphQLClient}>
         <SitecoreContext componentFactory={componentFactory} layoutData={this.props.ssrState}>

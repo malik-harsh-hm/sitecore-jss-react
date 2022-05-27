@@ -24,6 +24,7 @@ class RouteHandler extends React.Component {
   }
 
   componentDidMount() {
+    console.log('RouteHandler.componentDidMount');
     // If we are not using SSR we have to load layout data
     if (!this.props.isSSR) {
       this.updateLayoutData();
@@ -34,6 +35,7 @@ class RouteHandler extends React.Component {
    * Loads route data from Sitecore Layout Service into state.routeData
    */
   updateLayoutData() {
+    console.log('RouteHandler.updateLayoutData');
     let sitecoreRoutePath = this.props.route.match.params.sitecoreRoute || '/';
     if (!sitecoreRoutePath.startsWith('/')) {
       sitecoreRoutePath = `/${sitecoreRoutePath}`;
@@ -46,6 +48,7 @@ class RouteHandler extends React.Component {
 
     // get the route data for the new route
     layoutServiceInstance.fetchLayoutData(sitecoreRoutePath, language).then((routeData) => {
+      console.log('fetchLayoutData routeData', routeData);
       this.props.updateSitecoreContext(routeData);
     });
   }
@@ -70,6 +73,7 @@ class RouteHandler extends React.Component {
   }
 
   componentDidUpdate(previousProps) {
+    console.log('RouteHandler.componentDidUpdate');
     const existingRoute = previousProps.route.match.url;
     const newRoute = this.props.route.match.url;
 
@@ -90,8 +94,8 @@ class RouteHandler extends React.Component {
   }
 
   render() {
+    console.log('RouteHandler.render Props', this.props);
     const layoutData = this.props.sitecoreContext;
-
     // Note: this is client-side only 404 handling. Server-side 404 handling is the responsibility
     // of the server being used (i.e. node-headless-ssr-proxy and Sitecore intergrated rendering know how to send 404 status codes).
     // `route` is null in case if route is not found
