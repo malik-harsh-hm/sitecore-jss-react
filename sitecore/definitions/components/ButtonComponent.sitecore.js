@@ -10,9 +10,15 @@ export default function (manifest) {
   manifest.addComponent({
     name: 'ButtonComponent',
     icon: SitecoreIcon.DocumentTag,
-    fields: [
-      { name: 'label', type: CommonFieldTypes.SingleLineText },
-      { name: 'primary', type: CommonFieldTypes.Checkbox }
+    fields: [ 
+    { name: 'className', type: CommonFieldTypes.SingleLineText },
+    { name: 'disabled', type: CommonFieldTypes.Checkbox },
+    { name: 'disableElevation', type: CommonFieldTypes.Checkbox },
+    { name: 'disableFocusRipple', type: CommonFieldTypes.Checkbox },
+    { name: 'disableRipple', type: CommonFieldTypes.Checkbox },
+    { name: 'focusVisibleClassName', type: CommonFieldTypes.SingleLineText },
+    { name: 'fullWidth', type: CommonFieldTypes.Checkbox },
+    { name: 'href', type: CommonFieldTypes.SingleLineText },
     ],
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

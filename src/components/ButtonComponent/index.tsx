@@ -1,9 +1,16 @@
 import * as React from 'react';
-import './button.css';
+import Button from '@mui/material/Button';
+import { mapSitecorePropsToMUIProps } from '../../utils/utils';
 
 type SitecoreFields = {
-  label: { value: string };
-  primary: { value: boolean };
+  className : { value : string };
+  disabled : { value : boolean };
+  disableElevation : { value : boolean };
+  disableFocusRipple : { value : boolean };
+  disableRipple : { value : boolean };
+  focusVisibleClassName : { value : string };
+  fullWidth : { value : boolean };
+  href : { value : string };
 };
 
 type Props = {
@@ -14,28 +21,13 @@ type Props = {
   /**
    * Non-Authorable fields
    */
-  size: 'small' | 'medium' | 'large';
   /**
    * Handlers
    */
-  onClick?: () => void;
 };
 
-const ButtonComponent = (props: any): JSX.Element => {
-  console.log('buttonprops', props);
-  return (
-    <React.Fragment>
-      <button
-        type="button"
-        className={
-          props.fields.primary.value ? 'storybook-button--primary' : 'storybook-button--secondary'
-        }
-        {...props}
-      >
-        {props.fields.label.value}
-      </button>
-    </React.Fragment>
-  );
+const ButtonComponent = (props: Props): JSX.Element => {
+  return (<Button {...mapSitecorePropsToMUIProps(props)}></Button>);
 };
 
 export default ButtonComponent;

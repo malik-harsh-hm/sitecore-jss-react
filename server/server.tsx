@@ -43,6 +43,8 @@ export const apiKey = config.sitecoreApiKey;
 export const appName = config.jssAppName;
 export const defaultLanguage = config.defaultLanguage;
 
+type CallBack = <X extends unknown, Y extends unknown>(arg1: X, arg2: Y) => void;
+
 /**
  * Main entry point to the application when run via Server-Side Rendering,
  * either in Integrated Mode, or with a Node proxy host like the node-headless-ssr-proxy sample.
@@ -52,7 +54,7 @@ export const defaultLanguage = config.defaultLanguage;
  * @param {string} data JSON Layout service data for the rendering from Sitecore
  * @param {string} viewBag JSON view bag data from Sitecore (extensible context stuff)
  */
-export function renderView(callback, path, data, viewBag) {
+export function renderView<D extends unknown, V extends unknown>(callback: CallBack, path: string, data: D, viewBag: V) {
   try {
     const state = parseServerData(data, viewBag);
 
@@ -104,7 +106,7 @@ export function renderView(callback, path, data, viewBag) {
 
         // We add the GraphQL state to the SSR state so that we can avoid refetching queries after client load
         // Not using GraphQL? Get rid of this.
-        state.APOLLO_STATE = graphQLClient.cache.extract();
+        // state.APOLLO_STATE = graphQLClient.cache.extract();
 
         // Inject the rendered app into the index.html template (built from /public/index.html)
         // IMPORTANT: use serialize-javascript or similar instead of JSON.stringify() to emit initial state,
@@ -162,7 +164,7 @@ export function parseRouteUrl(url) {
     return null;
   }
 
-  let result = null;
+  let result;
 
   // use react-router-dom to find the route matching the incoming URL
   // then return its match params

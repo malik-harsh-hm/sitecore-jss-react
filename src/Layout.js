@@ -14,11 +14,9 @@ const Layout = ({ route }) => (
       </title>
     </Helmet>
     <VisitorIdentification />
-    <Placeholder name="jss-header" rendering={route} />
     <div className="container">
       <Placeholder name="jss-main" rendering={route} />
     </div>
-    <Placeholder name="jss-footer" rendering={route} />
   </React.Fragment>
 );
 const propsAreEqual = (prevProps, nextProps) => {
